@@ -9,8 +9,6 @@ from PyQt5.QtGui import QPixmap
 # Package imports
 import interface
 
-global widget
-
 # Open up the app
 app = QApplication([])
 widget = QtWidgets.QStackedWidget()
