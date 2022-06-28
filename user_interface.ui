@@ -161,7 +161,7 @@ background-color: rgb(85, 255, 255);
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>clockwise.JPG</pixmap>
+      <pixmap>icons/clockwise.JPG</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -233,7 +233,7 @@ background-color: rgb(85, 255, 255);
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>counter-clockwise.JPG</pixmap>
+      <pixmap>icons/counter-clockwise.JPG</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -286,7 +286,7 @@ background-color: rgb(85, 255, 255);
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap>half-rotation.JPG</pixmap>
+      <pixmap>icons/half-rotation.JPG</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
