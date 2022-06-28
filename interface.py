@@ -1,7 +1,7 @@
 # PyQt5 imports
 import sys
 from PyQt5.uic import loadUi
-from PyQt5 import QtWidgets, QtGui
+from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtWidgets import QDialog, QApplication, QWidget, QFileDialog
 from PyQt5.QtGui import QPixmap
 
@@ -9,6 +9,7 @@ from user_interface import Ui_Form
 from getResource import resource_path
 import rotator
 import pkgutil
+
 
 
 # Constants
@@ -120,12 +121,16 @@ class Interface(QWidget):
 
         # ------------------------------------------------------------------------------------------------------ #
         #       Business Logic
-    #
-    #     # Start Rotation
-    #     self.ui.button_start.clicked.connect(self.start_rotations)
-    #
+
         self.ui.button_start.setHidden(True)
         self.ui.button_start.clicked.connect(self.start)
+
+        # ------------------------------------------------------------------------------------------------------ #
+        #       Preview
+
+        self.ui.container_preview.setHidden(True)
+        self.ui.choose_image.activated.connect(self.display_preview)
+
         # self.ui.progressBar.setHidden(True)
         # self.ui.label_error_success.setHidden(True)
     #
@@ -145,6 +150,13 @@ class Interface(QWidget):
         if len(self.files) > 0:
             self.ui.group_two.setHidden(False)
 
+        # Set up the preview
+        short_names = list(map(lambda filename : filename[filename.rindex("/")+1:filename.rindex(".")], self.files))
+
+        self.ui.choose_image.addItems(short_names)
+
+        self.display_preview()
+
 
     # --------------------------------------------------------------------------------------------------------- #
     #       Set Rotations
@@ -156,6 +168,7 @@ class Interface(QWidget):
         self.ui.button_custom_rotation.setHidden(False)
         self.ui.button_clockwise.setStyleSheet(button_pressed)
         self.ui.button_counter_clockwise.setStyleSheet(button_not_pressed)
+        self.display_preview()
 
     def rotation_counter_clockwise(self):
         self.rotation = ("Counter Clockwise", self.rotation[1])
@@ -164,6 +177,7 @@ class Interface(QWidget):
         self.ui.button_custom_rotation.setHidden(False)
         self.ui.button_counter_clockwise.setStyleSheet(button_pressed)
         self.ui.button_clockwise.setStyleSheet(button_not_pressed)
+        self.display_preview()
 
     def rotation_ninety(self):
         self.rotation = (self.rotation[0], 90)
@@ -173,6 +187,7 @@ class Interface(QWidget):
         self.ui.button_custom_rotation.setStyleSheet(button_not_pressed)
 
         self.ui.group_three.setHidden(False)
+        self.display_preview()
 
     def rotation_one_eighty(self):
         self.rotation = (self.rotation[0], 180)
@@ -182,6 +197,7 @@ class Interface(QWidget):
         self.ui.button_custom_rotation.setStyleSheet(button_not_pressed)
 
         self.ui.group_three.setHidden(False)
+        self.display_preview()
 
     def rotation_custom(self):
         self.ui.angle.setHidden(False)
@@ -190,9 +206,11 @@ class Interface(QWidget):
         self.ui.button_custom_rotation.setStyleSheet(button_pressed)
 
         self.ui.group_three.setHidden(False)
+        self.display_preview()
 
     def rotation_custom_change(self):
         self.rotation = (self.rotation[0], int(self.ui.angle.value()))
+        self.display_preview()
 
     # --------------------------------------------------------------------------------------------------------- #
     #       Set Quality
@@ -206,6 +224,7 @@ class Interface(QWidget):
 
         self.ui.group_four.setHidden(False)
         self.ui.group_five.setHidden(False)
+        self.display_preview()
 
     def quality_different(self):
         self.quality = int(self.ui.percentage_quality.value())
@@ -216,18 +235,22 @@ class Interface(QWidget):
 
         self.ui.group_four.setHidden(False)
         self.ui.group_five.setHidden(False)
+        self.display_preview()
 
     def quality_custom_change(self):
         self.quality = int(self.ui.percentage_quality.value())
+        self.display_preview()
 
     # --------------------------------------------------------------------------------------------------------- #
     #       Set Alterations
 
     def alterations_type(self):
         self.alterations = (self.alterations[0], self.ui.choose_file_type.currentText())
+        self.display_preview()
 
     def alterations_colour(self):
         self.alterations = (self.ui.choose_colour.currentText(), self.alterations[1])
+        self.display_preview()
 
     # --------------------------------------------------------------------------------------------------------- #
     #       Set Destination
@@ -245,11 +268,11 @@ class Interface(QWidget):
 
     # Method to start the business logic
     def start(self):
-        print(self.files)
-        print(self.rotation)
-        print(self.quality)
-        print(self.alterations)
-        print(self.destination)
+        # print(self.files)
+        # print(self.rotation)
+        # print(self.quality)
+        # print(self.alterations)
+        # print(self.destination)
 
         success = rotator.start(filenames=self.files,
                                              destination=self.destination,
@@ -276,7 +299,28 @@ class Interface(QWidget):
         #
         # self.ui.label_error_success.setHidden(False)
 
+    def display_preview(self):
+        try:
+            image_data, w, h = rotator.preview(filename=self.files[self.ui.choose_image.currentIndex()],
+                                                                    angle=self.rotation[1],
+                                                                    direction=self.rotation[0],
+                                                                    quality=self.quality,
+                                                                    colour=self.alterations[0])
 
+            q_image = QtGui.QImage(image_data, w, h, QtGui.QImage.Format_ARGB32)
+
+            pixel_map = QtGui.QPixmap.fromImage(q_image)
+
+            pixel_map = pixel_map.scaled(self.ui.image_after.size().width(),
+                                                           self.ui.image_after.size().height(),
+                                                           QtCore.Qt.KeepAspectRatio,
+                                                           QtCore.Qt.SmoothTransformation)
+
+            self.ui.image_after.setPixmap(pixel_map)
+
+            self.ui.container_preview.setHidden(False)
+        except:
+            pass
 
 
 # Method to display the user interface

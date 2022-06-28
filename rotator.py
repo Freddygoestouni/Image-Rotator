@@ -22,6 +22,33 @@ def start(filenames, destination, angle, direction, quality, colour, file_extens
     except:
         return False
 
+def preview(filename, angle=None, direction=None, quality=None, colour=None):
+    try:
+        image = getImage(filename)
+
+        if angle is not None and direction is not None:
+            image = rotate(image, angle, direction)
+
+        if colour is not None:
+            image = colour_convert(image, colour)
+
+        if image.mode == "RGB":
+            r, g, b = image.split()
+            image = Image.merge("RGB", (b, g, r))
+        elif  image.mode == "RGBA":
+            r, g, b, a = image.split()
+            image = Image.merge("RGBA", (b, g, r, a))
+        elif image.mode == "L":
+            image = image.convert("RGBA")
+
+        image = image.convert("RGBA")
+
+        data = image.tobytes("raw", "RGBA")
+
+        return data, image.size[0], image.size[1]
+    except:
+        return None
+
 def getImage(filename):
     return Image.open(filename).convert('RGBA')
 
