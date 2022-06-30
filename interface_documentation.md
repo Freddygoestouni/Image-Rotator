@@ -65,6 +65,20 @@ The primary components on this side which are not associated with one of the inp
 
 ### Preview (Right Side)
 
-#### Before
+| Name | Type | Purpose |
+| ------ | ------ | -------- |
+| container_preview | QWidget | Container for preview |
+| label_preview | QLabel | Title label for this component |
+| choose_image | QComboBox | Choice for which image to preview |
+| image_after | QLabel | Label to hold the image |
 
-#### After
+### Processing
+
+| Name | Type | Purpose |
+| ------ | ------ | -------- |
+| label_title | QLabel | Label for the title of the page |
+| label_progress | QLabel | Label describing the progress |
+| progress_bar | QProgressBar | Progress bar  |
+| button_new | QPushButton | Button to reset the application  |
+| button_close | QPushButton | Button to close the application |
+| button_cancel | QPushButton | Button to cancel the current execution |

@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import QDialog, QApplication, QWidget, QFileDialog
 from PyQt5.QtGui import QPixmap
 
 from user_interface import Ui_Form
+from processing_interface import Ui_Form as Processing_Form
 from getResource import resource_path
 import rotator
 import pkgutil
@@ -47,6 +48,7 @@ class Interface(QWidget):
         # loadUi("user_interface.ui",self)
         self.ui = Ui_Form()
         self.ui.setupUi(self)
+        self.widget = widget
 
 
         # Files
@@ -131,11 +133,10 @@ class Interface(QWidget):
         self.ui.container_preview.setHidden(True)
         self.ui.choose_image.activated.connect(self.display_preview)
 
-        # self.ui.progressBar.setHidden(True)
-        # self.ui.label_error_success.setHidden(True)
-    #
-    #
-    #
+
+    
+
+
     # Method to handle the selection of the image files
     def choose_files(self):
         # Get File Names
@@ -265,39 +266,17 @@ class Interface(QWidget):
             self.ui.button_start.setHidden(False)
 
 
-
     # Method to start the business logic
     def start(self):
-        # print(self.files)
-        # print(self.rotation)
-        # print(self.quality)
-        # print(self.alterations)
-        # print(self.destination)
+        parameters = {"files" : self.files,
+                               "destination" : self.destination,
+                               "angle" : self.rotation[1],
+                               "direction" : self.rotation[0],
+                               "quality": self.quality,
+                               "colour" : self.alterations[0],
+                               "file_extension" : self.alterations[1]}
 
-        success = rotator.start(filenames=self.files,
-                                             destination=self.destination,
-                                             angle=self.rotation[1],
-                                             direction=self.rotation[0],
-                                             quality=self.quality,
-                                             colour=self.alterations[0],
-                                             file_extension=self.alterations[1])
-
-        print(success)
-
-        # self.ui.label_error_success.setHidden(True)
-        # self.ui.progressBar.setHidden(False)
-        # self.ui.progressBar.setValue(0)
-
-        # success = rotator.start(self.files, self.rotation, self.quality, self.destination, self.ui.progressBar)
-
-        # if success:
-        #     self.ui.label_error_success.setText("Success!")
-        #     self.ui.label_error_success.setStyleSheet("color: rgb(0, 170, 0);")
-        # else:
-        #     self.ui.label_error_success.setText("Something went wrong!")
-        #     self.ui.label_error_success.setStyleSheet("color: rgb(255, 0, 0);")
-        #
-        # self.ui.label_error_success.setHidden(False)
+        display_processing(self.widget, parameters)
 
     def display_preview(self):
         try:
@@ -322,6 +301,51 @@ class Interface(QWidget):
         except:
             pass
 
+class Processing_Interface(QWidget):
+    def __init__(self, widget, parameters):
+        super(Processing_Interface, self).__init__()
+        # loadUi("user_interface.ui",self)
+        self.ui = Processing_Form()
+        self.ui.setupUi(self)
+        self.widget = widget
+
+        self.ui.label_title.setText("Processing " + str(len(parameters["files"])) + " images")
+
+        self.ui.button_cancel.setHidden(True)
+        self.ui.button_new.setHidden(True)
+        self.ui.button_close.setHidden(True)
+
+        self.ui.button_close.clicked.connect(self.exit)
+        self.ui.button_new.clicked.connect(self.reset)
+
+
+        # Start the execution
+        success = rotator.start(filenames=parameters["files"],
+                                             destination=parameters["destination"],
+                                             angle=parameters["angle"],
+                                             direction=parameters["direction"],
+                                             quality=parameters["quality"],
+                                             colour=parameters["colour"],
+                                             file_extension=parameters["file_extension"],
+                                             progress_bar=self.ui.progress_bar,
+                                             progress_label=self.ui.label_progress)
+
+        if success:
+            self.ui.button_new.setHidden(False)
+            self.ui.button_close.setHidden(False)
+        else:
+            self.ui.button_close.setHidden(False)
+            self.ui.label_title.setText("Something went wrong!")
+            self.ui.label_title.setStyleSheet("color: rgb(255, 0, 0);")
+
+    def exit(self):
+        sys.exit(1)
+
+    def reset(self):
+        self.widget.setCurrentIndex(self.widget.currentIndex()-1)
+        self.widget.removeWidget(self.widget.widget(self.widget.currentIndex()+1))
+        self.widget.removeWidget(self.widget.widget(self.widget.currentIndex()))
+        display(self.widget)
 
 # Method to display the user interface
 def display(widget):
@@ -329,3 +353,10 @@ def display(widget):
     widget.addWidget(screen)
     widget.setFixedHeight(550)
     widget.setFixedWidth(800)
+
+def display_processing(widget, parameters):
+    screen = Processing_Interface(widget, parameters)
+    widget.addWidget(screen)
+    widget.setCurrentIndex(widget.currentIndex()+1)
+    widget.setFixedHeight(155)
+    widget.setFixedWidth(345)

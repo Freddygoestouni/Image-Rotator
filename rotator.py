@@ -5,9 +5,10 @@ from PIL import Image
 import os, sys
 
 
-def start(filenames, destination, angle, direction, quality, colour, file_extension, progressBar=None):
+def start(filenames, destination, angle, direction, quality, colour, file_extension, progress_bar, progress_label):
     try:
         for filename in filenames:
+            progress_label.setText(str(filenames.index(filename)) + " out of " + str(len(filenames)))
             image = getImage(filename)
 
             image = rotate(image, angle, direction)
@@ -16,8 +17,9 @@ def start(filenames, destination, angle, direction, quality, colour, file_extens
 
             saveImage(destination, filename, image, quality, file_extension)
 
-            #progressBar.setValue(int(filenames.index(filename)+1.0*100.0/len(filenames)))
-        #progressBar.setValue(100)
+            progress_bar.setValue(int(filenames.index(filename)+1.0*100.0/len(filenames)))
+        progress_label.setText(str(len(filenames)) + " out of " + str(len(filenames)))
+        progress_bar.setValue(100)
         return True
     except:
         return False
