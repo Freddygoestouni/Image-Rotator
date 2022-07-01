@@ -1,0 +1,1307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>840</width>
+    <height>590</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="container_root" native="true">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>800</width>
+     <height>550</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget #container_root{
+	background-color: rgb(2, 62, 138);
+	border: 0.5px solid;
+	border-radius:20px;
+	border-color: rgb(173, 232, 244)
+}
+
+QLabel{
+	font: &quot;Gill Sans MT&quot;;
+	color: rgb(255,255,255);
+}
+
+QComboBox{
+	border: none;
+	border-radius: 5px;
+	background-color:  rgba(202, 240, 248, 200);
+}
+
+QComboBox:editable {
+    background-color: rgba(202, 240, 248, 200);
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid; /* just a single line */
+    border-top-right-radius: 5px; /* same radius as the QComboBox */
+    border-bottom-right-radius: 5px;
+}
+
+QComboBox::down-arrow {
+    image: url(:/icons/icons/chevron-down.svg);
+	width:15px;
+}
+
+
+QPushButton{
+	background-color: rgba(202, 240, 248, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}
+QPushButton:hover{
+	background-color: rgba(0, 119, 182, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}</string>
+   </property>
+   <widget class="QWidget" name="container_widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>780</width>
+      <height>480</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QWidget" name="container_input" native="true">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox{
+	background-color: rgba(72, 202, 228, 150);
+	border: 0px solid;
+	border-radius: 20px;
+}
+
+QSpinBox {
+	border: none;
+	background:  rgba(202, 240, 248, 200);
+	border-radius:5px;
+	font: 10pt &quot;Gill Sans MT&quot;;
+}
+
+QSpinBox::up-button{
+	subcontrol-origin: border;
+    subcontrol-position: top right;
+	border-radius: 2px;
+	border-image: url(:/icons/icons/chevron-up.svg);
+	border-width: 1px;
+}
+
+QSpinBox::up-button:hover{
+	background-color:  rgba(0, 119, 182, 200)
+}
+
+QSpinBox::down-button{
+	subcontrol-origin: border;
+    subcontrol-position: bottom right;
+	border-radius: 2px;
+	border-image: url(:/icons/icons/chevron-down.svg);
+	border-width: 1px;
+}
+
+QSpinBox::down-button:hover{
+	background-color:  rgba(0, 119, 182, 200)
+}</string>
+       </property>
+       <widget class="QGroupBox" name="group_one">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>359</width>
+          <height>60</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QLabel" name="label_stage_one">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>0</y>
+           <width>150</width>
+           <height>60</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Gill Sans MT</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>1 - Images</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="button_choose_files">
+         <property name="geometry">
+          <rect>
+           <x>280</x>
+           <y>8</y>
+           <width>48</width>
+           <height>44</height>
+          </rect>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>Select Files</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color: rgba(202, 240, 248, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}
+QPushButton:hover{
+	background-color: rgba(0, 119, 182, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="reasources.qrc">
+           <normaloff>:/icons/icons/image.svg</normaloff>:/icons/icons/image.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_no_files">
+         <property name="geometry">
+          <rect>
+           <x>190</x>
+           <y>0</y>
+           <width>91</width>
+           <height>60</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Gill Sans MT</family>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 10pt &quot;Gill Sans MT&quot;;</string>
+         </property>
+         <property name="text">
+          <string>0 files chosen</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="group_two">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>85</y>
+          <width>359</width>
+          <height>112</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QLabel" name="label_stage_two">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>0</y>
+           <width>150</width>
+           <height>60</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Gill Sans MT</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>2 - Rotation</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="button_clockwise">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>8</y>
+           <width>48</width>
+           <height>44</height>
+          </rect>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>Clockwise Rotation</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color: rgba(202, 240, 248, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}
+QPushButton:hover{
+	background-color: rgba(0, 119, 182, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="reasources.qrc">
+           <normaloff>:/icons/icons/rotate-cw.svg</normaloff>:/icons/icons/rotate-cw.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="button_counter_clockwise">
+         <property name="geometry">
+          <rect>
+           <x>280</x>
+           <y>8</y>
+           <width>48</width>
+           <height>44</height>
+          </rect>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>Counter-Clockwise Rotation</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color: rgba(202, 240, 248, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}
+QPushButton:hover{
+	background-color: rgba(0, 119, 182, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="reasources.qrc">
+           <normaloff>:/icons/icons/rotate-ccw.svg</normaloff>:/icons/icons/rotate-ccw.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="button_ninety">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>60</y>
+           <width>48</width>
+           <height>44</height>
+          </rect>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Gill Sans MT</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>90° Rotation</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color: rgba(202, 240, 248, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}
+QPushButton:hover{
+	background-color: rgba(0, 119, 182, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}</string>
+         </property>
+         <property name="text">
+          <string>90°</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="button_one_eighty">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>60</y>
+           <width>49</width>
+           <height>44</height>
+          </rect>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Gill Sans MT</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>180° Rotation</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color: rgba(202, 240, 248, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}
+QPushButton:hover{
+	background-color: rgba(0, 119, 182, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}</string>
+         </property>
+         <property name="text">
+          <string>180°</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="angle">
+         <property name="geometry">
+          <rect>
+           <x>280</x>
+           <y>70</y>
+           <width>48</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="suffix">
+          <string>°</string>
+         </property>
+         <property name="maximum">
+          <number>360</number>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="button_custom_rotation">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>60</y>
+           <width>48</width>
+           <height>44</height>
+          </rect>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <family>Gill Sans MT</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Custom Rotation</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color: rgba(202, 240, 248, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}
+QPushButton:hover{
+	background-color: rgba(0, 119, 182, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}</string>
+         </property>
+         <property name="text">
+          <string>?°</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="group_three">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>212</y>
+          <width>359</width>
+          <height>60</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QLabel" name="label_stage_three">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>0</y>
+           <width>150</width>
+           <height>60</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Gill Sans MT</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>3 - Quality</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="button_different_quality">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>8</y>
+           <width>48</width>
+           <height>44</height>
+          </rect>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>Compress</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color: rgba(202, 240, 248, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}
+QPushButton:hover{
+	background-color: rgba(0, 119, 182, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="reasources.qrc">
+           <normaloff>:/icons/icons/compression.svg</normaloff>:/icons/icons/compression.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>40</width>
+           <height>40</height>
+          </size>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="percentage_quality">
+         <property name="geometry">
+          <rect>
+           <x>280</x>
+           <y>18</y>
+           <width>48</width>
+           <height>24</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Gill Sans MT</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 10pt &quot;Gill Sans MT&quot;;</string>
+         </property>
+         <property name="suffix">
+          <string>%</string>
+         </property>
+         <property name="minimum">
+          <number>10</number>
+         </property>
+         <property name="maximum">
+          <number>100</number>
+         </property>
+         <property name="value">
+          <number>75</number>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="button_same_quality">
+         <property name="geometry">
+          <rect>
+           <x>160</x>
+           <y>8</y>
+           <width>48</width>
+           <height>44</height>
+          </rect>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>Same Quality</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color: rgba(202, 240, 248, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}
+QPushButton:hover{
+	background-color: rgba(0, 119, 182, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="reasources.qrc">
+           <normaloff>:/icons/icons/file.svg</normaloff>:/icons/icons/file.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="group_four">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>287</y>
+          <width>359</width>
+          <height>70</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QLabel" name="label_stage_four">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>0</y>
+           <width>150</width>
+           <height>60</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Gill Sans MT</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>4 - Alterations</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="choose_colour">
+         <property name="geometry">
+          <rect>
+           <x>198</x>
+           <y>10</y>
+           <width>131</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Gill Sans MT</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="choose_file_type">
+         <property name="geometry">
+          <rect>
+           <x>197</x>
+           <y>40</y>
+           <width>131</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Gill Sans MT</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>Destination File Type</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="button_same_quality_2">
+         <property name="geometry">
+          <rect>
+           <x>140</x>
+           <y>13</y>
+           <width>48</width>
+           <height>44</height>
+          </rect>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>Same Quality</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color: rgba(202, 240, 248, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}
+QPushButton:hover{
+	background-color: rgba(0, 119, 182, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="reasources.qrc">
+           <normaloff>:/icons/icons/cpu.svg</normaloff>:/icons/icons/cpu.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="group_five">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>372</y>
+          <width>359</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QLabel" name="label_stage_five">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>0</y>
+           <width>150</width>
+           <height>60</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Gill Sans MT</family>
+           <pointsize>14</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>5 - Destination</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="button_choose_save">
+         <property name="geometry">
+          <rect>
+           <x>280</x>
+           <y>8</y>
+           <width>48</width>
+           <height>44</height>
+          </rect>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>Select Destination Location</string>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color: rgba(202, 240, 248, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}
+QPushButton:hover{
+	background-color: rgba(0, 119, 182, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="reasources.qrc">
+           <normaloff>:/icons/icons/folder.svg</normaloff>:/icons/icons/folder.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>30</width>
+           <height>30</height>
+          </size>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QWidget" name="container_preview" native="true">
+       <widget class="QLabel" name="image_after">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>85</y>
+          <width>360</width>
+          <height>360</height>
+         </rect>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 28pt &quot;MS Shell Dlg 2&quot;;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="choose_image">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>45</y>
+          <width>361</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Gill Sans MT</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 12pt &quot;Gill Sans MT&quot;;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_preview">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>171</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Gill Sans MT</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Preview</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="button_cancel">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>500</y>
+      <width>48</width>
+      <height>44</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="toolTip">
+     <string>Cancel/Reset</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: rgba(202, 240, 248, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}
+QPushButton:hover{
+	background-color: rgba(0, 119, 182, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="reasources.qrc">
+      <normaloff>:/icons/icons/slash.svg</normaloff>:/icons/icons/slash.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="button_start">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>495</y>
+      <width>48</width>
+      <height>44</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="toolTip">
+     <string>Start</string>
+    </property>
+    <property name="toolTipDuration">
+     <number>-1</number>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: rgba(202, 240, 248, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}
+QPushButton:hover{
+	background-color: rgba(0, 119, 182, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="reasources.qrc">
+      <normaloff>:/icons/icons/arrow-right.svg</normaloff>:/icons/icons/arrow-right.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>30</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_creator">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>525</y>
+      <width>141</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Gill Sans MT&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Created by: Nicholas Williams</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="nav_bar_widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>800</width>
+      <height>45</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget #nav_bar_widget{
+	/*background-color: rgb(3, 4, 94);*/
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0.876147 rgba(3, 4, 94, 255), stop:1 rgba(2, 62, 138, 255));
+	border-top: 0.5px solid;
+	border-left: 0.5px solid;
+	border-right: 0.5px solid;
+	border-top-left-radius:20px;
+	border-top-right-radius:20px;
+	border-color: rgb(173, 232, 244)
+}</string>
+    </property>
+    <widget class="QLabel" name="label_title">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>0</y>
+       <width>360</width>
+       <height>40</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="font">
+      <font>
+       <family>Gill Sans MT</family>
+       <pointsize>22</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 22pt &quot;Gill Sans MT&quot;</string>
+     </property>
+     <property name="text">
+      <string>&lt;strong&gt; Image Rotator &lt;/strong&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_icon">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>5</y>
+       <width>34</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Gill Sans MT</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255,255,255);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="reasources.qrc">:/icons/new_icon.ico</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_close">
+     <property name="geometry">
+      <rect>
+       <x>760</x>
+       <y>5</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="toolTip">
+      <string>Close Application</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	background-color: rgba(202, 240, 248, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}
+QPushButton:hover{
+	background-color: rgba(0, 119, 182, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="reasources.qrc">
+       <normaloff>:/icons/icons/x.svg</normaloff>:/icons/icons/x.svg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_minimise">
+     <property name="geometry">
+      <rect>
+       <x>725</x>
+       <y>5</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="toolTip">
+      <string>Minimise Application</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	background-color: rgba(202, 240, 248, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}
+QPushButton:hover{
+	background-color: rgba(0, 119, 182, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="reasources.qrc">
+       <normaloff>:/icons/icons/minus.svg</normaloff>:/icons/icons/minus.svg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button_user_guide">
+     <property name="geometry">
+      <rect>
+       <x>690</x>
+       <y>5</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="toolTip">
+      <string>Open User Guide</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	background-color: rgba(202, 240, 248, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}
+QPushButton:hover{
+	background-color: rgba(0, 119, 182, 200);
+	border: 0px solid;
+	border-radius: 10px;
+	padding:7px;	
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="reasources.qrc">
+       <normaloff>:/icons/icons/info.svg</normaloff>:/icons/icons/info.svg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+   </widget>
+   <zorder>nav_bar_widget</zorder>
+   <zorder>container_widget</zorder>
+   <zorder>button_cancel</zorder>
+   <zorder>button_start</zorder>
+   <zorder>label_creator</zorder>
+  </widget>
+ </widget>
+ <resources>
+  <include location="reasources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

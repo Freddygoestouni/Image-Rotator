@@ -14,35 +14,46 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(345, 155)
-        self.label_title = QtWidgets.QLabel(Form)
-        self.label_title.setGeometry(QtCore.QRect(20, 10, 171, 31))
+        Form.resize(385, 200)
+        Form.setStyleSheet("")
+        self.container = QtWidgets.QWidget(Form)
+        self.container.setGeometry(QtCore.QRect(20, 20, 345, 160))
+        self.container.setStyleSheet("QWidget #container{\n"
+"    background-color: rgb(2, 62, 138);\n"
+"    border: 0.5px solid;\n"
+"    border-radius:20px;\n"
+"    border-color: rgb(173, 232, 244)\n"
+"}")
+        self.container.setObjectName("container")
+        self.label_progress = QtWidgets.QLabel(self.container)
+        self.label_progress.setGeometry(QtCore.QRect(110, 80, 211, 31))
+        font = QtGui.QFont()
+        font.setFamily("Gill Sans MT")
+        font.setPointSize(12)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.label_progress.setFont(font)
+        self.label_progress.setStyleSheet("color: rgb(255,255,255);\n"
+"font: 12pt \"Gill Sans MT\";")
+        self.label_progress.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_progress.setObjectName("label_progress")
+        self.label_title = QtWidgets.QLabel(self.container)
+        self.label_title.setGeometry(QtCore.QRect(55, 10, 261, 31))
         font = QtGui.QFont()
         font.setFamily("Gill Sans MT")
         font.setPointSize(14)
         self.label_title.setFont(font)
+        self.label_title.setStyleSheet("color: rgb(255,255,255);")
         self.label_title.setObjectName("label_title")
-        self.progress_bar = QtWidgets.QProgressBar(Form)
-        self.progress_bar.setGeometry(QtCore.QRect(20, 50, 311, 31))
-        self.progress_bar.setStyleSheet("font: 12pt \"Gill Sans MT\";")
-        self.progress_bar.setProperty("value", 24)
-        self.progress_bar.setObjectName("progress_bar")
-        self.label_progress = QtWidgets.QLabel(Form)
-        self.label_progress.setGeometry(QtCore.QRect(120, 80, 171, 31))
-        font = QtGui.QFont()
-        font.setFamily("Gill Sans MT")
-        font.setPointSize(14)
-        self.label_progress.setFont(font)
-        self.label_progress.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_progress.setObjectName("label_progress")
-        self.button_cancel = QtWidgets.QPushButton(Form)
-        self.button_cancel.setGeometry(QtCore.QRect(20, 110, 48, 44))
+        self.button_close = QtWidgets.QPushButton(self.container)
+        self.button_close.setGeometry(QtCore.QRect(280, 110, 48, 44))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.button_cancel.sizePolicy().hasHeightForWidth())
-        self.button_cancel.setSizePolicy(sizePolicy)
-        self.button_cancel.setStyleSheet("QPushButton{\n"
+        sizePolicy.setHeightForWidth(self.button_close.sizePolicy().hasHeightForWidth())
+        self.button_close.setSizePolicy(sizePolicy)
+        self.button_close.setStyleSheet("QPushButton{\n"
 "    background-color: rgba(202, 240, 248, 200);\n"
 "    border: 0px solid;\n"
 "    border-radius: 10px;\n"
@@ -54,14 +65,32 @@ class Ui_Form(object):
 "    border-radius: 10px;\n"
 "    padding:7px;    \n"
 "}")
-        self.button_cancel.setText("")
+        self.button_close.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icons/icons/slash.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.button_cancel.setIcon(icon)
-        self.button_cancel.setIconSize(QtCore.QSize(30, 30))
-        self.button_cancel.setObjectName("button_cancel")
-        self.button_new = QtWidgets.QPushButton(Form)
-        self.button_new.setGeometry(QtCore.QRect(230, 110, 48, 44))
+        icon.addPixmap(QtGui.QPixmap(":/icons/icons/x.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.button_close.setIcon(icon)
+        self.button_close.setIconSize(QtCore.QSize(30, 30))
+        self.button_close.setObjectName("button_close")
+        self.progress_bar = QtWidgets.QProgressBar(self.container)
+        self.progress_bar.setGeometry(QtCore.QRect(15, 50, 311, 31))
+        self.progress_bar.setStyleSheet("QProgressBar {\n"
+"    font: 12pt \"Gill Sans MT\"; \n"
+"    color: rgb(255,255,255);\n"
+"    background-color: rgb(98, 114, 164);\n"
+"    border-style: none;\n"
+"    border-radius: 10px;\n"
+"    text-align: center;\n"
+"}\n"
+"QProgressBar::chunk{\n"
+"    border-radius: 10px;\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0.511364, x2:1, y2:0.509615, stop:0 rgba(3, 4, 94, 255), stop:1 rgba(173, 232, 244, 150));\n"
+"}\n"
+"\n"
+"")
+        self.progress_bar.setProperty("value", 50)
+        self.progress_bar.setObjectName("progress_bar")
+        self.button_new = QtWidgets.QPushButton(self.container)
+        self.button_new.setGeometry(QtCore.QRect(220, 110, 48, 44))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -85,14 +114,14 @@ class Ui_Form(object):
         self.button_new.setIcon(icon1)
         self.button_new.setIconSize(QtCore.QSize(30, 30))
         self.button_new.setObjectName("button_new")
-        self.button_close = QtWidgets.QPushButton(Form)
-        self.button_close.setGeometry(QtCore.QRect(290, 110, 48, 44))
+        self.button_cancel = QtWidgets.QPushButton(self.container)
+        self.button_cancel.setGeometry(QtCore.QRect(10, 110, 48, 44))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.button_close.sizePolicy().hasHeightForWidth())
-        self.button_close.setSizePolicy(sizePolicy)
-        self.button_close.setStyleSheet("QPushButton{\n"
+        sizePolicy.setHeightForWidth(self.button_cancel.sizePolicy().hasHeightForWidth())
+        self.button_cancel.setSizePolicy(sizePolicy)
+        self.button_cancel.setStyleSheet("QPushButton{\n"
 "    background-color: rgba(202, 240, 248, 200);\n"
 "    border: 0px solid;\n"
 "    border-radius: 10px;\n"
@@ -104,12 +133,23 @@ class Ui_Form(object):
 "    border-radius: 10px;\n"
 "    padding:7px;    \n"
 "}")
-        self.button_close.setText("")
+        self.button_cancel.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(":/icons/icons/x.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.button_close.setIcon(icon2)
-        self.button_close.setIconSize(QtCore.QSize(30, 30))
-        self.button_close.setObjectName("button_close")
+        icon2.addPixmap(QtGui.QPixmap(":/icons/icons/slash.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.button_cancel.setIcon(icon2)
+        self.button_cancel.setIconSize(QtCore.QSize(30, 30))
+        self.button_cancel.setObjectName("button_cancel")
+        self.label_title_2 = QtWidgets.QLabel(self.container)
+        self.label_title_2.setGeometry(QtCore.QRect(10, 10, 34, 30))
+        font = QtGui.QFont()
+        font.setFamily("Gill Sans MT")
+        font.setPointSize(14)
+        self.label_title_2.setFont(font)
+        self.label_title_2.setStyleSheet("color: rgb(255,255,255);")
+        self.label_title_2.setText("")
+        self.label_title_2.setPixmap(QtGui.QPixmap(":/icons/new_icon.ico"))
+        self.label_title_2.setScaledContents(True)
+        self.label_title_2.setObjectName("label_title_2")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -117,9 +157,9 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label_title.setText(_translate("Form", "Processing x images"))
         self.label_progress.setText(_translate("Form", "x out of y"))
-        self.button_cancel.setToolTip(_translate("Form", "Cancel/Reset"))
-        self.button_new.setToolTip(_translate("Form", "New Image Rotation"))
+        self.label_title.setText(_translate("Form", "Processing x images"))
         self.button_close.setToolTip(_translate("Form", "Close Application"))
+        self.button_new.setToolTip(_translate("Form", "New Image Rotation"))
+        self.button_cancel.setToolTip(_translate("Form", "Cancel/Reset"))
 import reasources_rc
