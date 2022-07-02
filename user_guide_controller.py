@@ -1,11 +1,21 @@
-import sys
-from PyQt5.uic import loadUi
-from PyQt5 import QtWidgets, QtGui, QtCore
-from PyQt5.QtWidgets import QDialog, QApplication, QWidget, QFileDialog
+'''
 
+Python script to control the user interface for the user guide page.
+This page is shown when the user guide clicks on the user interface button.
+
+'''
+
+# Standard libaray imports
+import sys
+
+# PyQt5 imports
+from PyQt5 import QtWidgets, QtGui, QtCore
+from PyQt5.QtWidgets import QWidget
+
+# User interface import
 from user_guide_interface import Ui_Form
 
-class User_Guide_Interface(QWidget):
+class Interface(QWidget):
     '''Class for the window shown when application is processing images'''
 
     def __init__(self, widget : QtWidgets.QStackedWidget):
@@ -17,7 +27,7 @@ class User_Guide_Interface(QWidget):
         '''
 
         # Call the super class' constructor
-        super(User_Guide_Interface, self).__init__()
+        super(Interface, self).__init__()
 
         # Set up the user interface
         self.ui = Ui_Form()
@@ -61,7 +71,7 @@ class User_Guide_Interface(QWidget):
         self.widget.move(self.widget.x() + delta.x(), self.widget.y() + delta.y())
         self.old_position = event.globalPos()
 
-def display(widget):
+def display(widget : QtWidgets.QStackedWidget):
     '''
     Method to display the user guide
 
@@ -70,7 +80,7 @@ def display(widget):
     '''
 
     # Initialise the processing screen
-    screen = User_Guide_Interface(widget)
+    screen = Interface(widget)
 
     # Add the processing screen to the stacked widget
     widget.addWidget(screen)

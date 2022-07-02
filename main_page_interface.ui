@@ -764,52 +764,6 @@ QPushButton:hover{
           <string>Destination File Type</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="button_same_quality_2">
-         <property name="geometry">
-          <rect>
-           <x>140</x>
-           <y>13</y>
-           <width>48</width>
-           <height>44</height>
-          </rect>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="toolTip">
-          <string>Same Quality</string>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-	background-color: rgba(202, 240, 248, 200);
-	border: 0px solid;
-	border-radius: 10px;
-	padding:7px;	
-}
-QPushButton:hover{
-	background-color: rgba(0, 119, 182, 200);
-	border: 0px solid;
-	border-radius: 10px;
-	padding:7px;	
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="reasources.qrc">
-           <normaloff>:/icons/icons/cpu.svg</normaloff>:/icons/icons/cpu.svg</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>30</width>
-           <height>30</height>
-          </size>
-         </property>
-        </widget>
        </widget>
        <widget class="QGroupBox" name="group_five">
         <property name="geometry">
@@ -962,52 +916,6 @@ QPushButton:hover{
       </widget>
      </item>
     </layout>
-   </widget>
-   <widget class="QPushButton" name="button_cancel">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>500</y>
-      <width>48</width>
-      <height>44</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="toolTip">
-     <string>Cancel/Reset</string>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-	background-color: rgba(202, 240, 248, 200);
-	border: 0px solid;
-	border-radius: 10px;
-	padding:7px;	
-}
-QPushButton:hover{
-	background-color: rgba(0, 119, 182, 200);
-	border: 0px solid;
-	border-radius: 10px;
-	padding:7px;	
-}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="reasources.qrc">
-      <normaloff>:/icons/icons/slash.svg</normaloff>:/icons/icons/slash.svg</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>30</width>
-      <height>30</height>
-     </size>
-    </property>
    </widget>
    <widget class="QPushButton" name="button_start">
     <property name="geometry">
@@ -1295,7 +1203,6 @@ QPushButton:hover{
    </widget>
    <zorder>nav_bar_widget</zorder>
    <zorder>container_widget</zorder>
-   <zorder>button_cancel</zorder>
    <zorder>button_start</zorder>
    <zorder>label_creator</zorder>
   </widget>

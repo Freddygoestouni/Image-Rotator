@@ -1,6 +1,19 @@
 # Interface Documentation
 
-## Components of the interface
+This document contains the names and types of all components of the user interface. This is used by the controller python scripts to access the specific components of the interfaces. 
+
+## Main Page (main_page_interface.ui)
+
+### Navigation Bar
+
+| Name | Type | Purpose |
+| ------ | ------ | -------- |
+| nav_bar_widget | QWidget | Container for the user input |
+| label_title | QLabel | Label for the title of the application |
+| label_icon | QLabel | Icon of the application |
+| button_close | QPushButton | Button to close the application |
+| button_minimise | QPushButton | Button to minimise the application |
+| button_user_guide | QPushButton | Button to open the user guide |
 
 ### User Input (Left Side)
 
@@ -10,8 +23,8 @@ The primary components on this side which are not associated with one of the inp
 
 | Name | Type | Purpose |
 | ------ | ------ | -------- |
+| container_input | QWidget | Container for the user input |
 | button_start | QPushButton | Button to start processing |
-| button_cancel | QPushButton | Button to cancel |
 
 #### Stage 1
 
@@ -19,6 +32,7 @@ The primary components on this side which are not associated with one of the inp
 | ------ | ------ | -------- |
 | group_one | QGroupBox | Container for stage |
 | label_stage_one | QLabel | Label describing stage |
+| label_no_files | QLabel | Label detailing the number of files selected |
 | button_choose_files | QPushButton | Button to allow the user to select images for processing |
 
 #### Stage 2
@@ -44,7 +58,6 @@ The primary components on this side which are not associated with one of the inp
 | button_same_quality | QPushButton | Button for no compression |
 | button_different_quality | QPushButton | Button for compression |
 | percentage_quality | QSpinBox | Input for compression amount |
-| label_percentage | QLabel | Label describing custom compression |
 
 #### Stage 4
 
@@ -65,6 +78,8 @@ The primary components on this side which are not associated with one of the inp
 
 ### Preview (Right Side)
 
+The user input components are all under the root component `container_preview`.
+
 | Name | Type | Purpose |
 | ------ | ------ | -------- |
 | container_preview | QWidget | Container for preview |
@@ -72,13 +87,37 @@ The primary components on this side which are not associated with one of the inp
 | choose_image | QComboBox | Choice for which image to preview |
 | image_after | QLabel | Label to hold the image |
 
-### Processing
+## Processing Page (processing_interface.ui)
 
 | Name | Type | Purpose |
 | ------ | ------ | -------- |
 | label_title | QLabel | Label for the title of the page |
+| label_icon | QLabel | Icon of the application |
 | label_progress | QLabel | Label describing the progress |
 | progress_bar | QProgressBar | Progress bar  |
 | button_new | QPushButton | Button to reset the application  |
 | button_close | QPushButton | Button to close the application |
 | button_cancel | QPushButton | Button to cancel the current execution |
+
+## User Guide Page (user_guide_interface.ui)
+
+### Navigation Bar
+
+| Name | Type | Purpose |
+| ------ | ------ | -------- |
+| nav_bar_widget | QWidget | Container for the user input |
+| label_title | QLabel | Label for the title of the application |
+| label_page_title | QLabel | Label for the title of the page |
+| label_icon | QLabel | Icon of the application |
+| button_close | QPushButton | Button to close the application |
+| button_minimise | QPushButton | Button to minimise the application |
+| button_user_guide | QPushButton | Button to open the user guide |
+
+### User guide
+
+| Name | Type | Purpose |
+| ------ | ------ | -------- |
+| container_content | QWidget | Container for the content of the application |
+| button_back | QPushButton | Button to go back to the interface |
+| guide_text_left | QTextBrowser | Left half of the user guide |
+| guide_text_right | QTextBrowser | Right half of the user guide |

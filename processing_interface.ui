@@ -81,7 +81,7 @@ font: 12pt &quot;Gill Sans MT&quot;;</string>
      <string notr="true">color: rgb(255,255,255);</string>
     </property>
     <property name="text">
-     <string>Processing x images</string>
+     <string>Processing images</string>
     </property>
    </widget>
    <widget class="QPushButton" name="button_close">
@@ -251,7 +251,7 @@ QPushButton:hover{
      </size>
     </property>
    </widget>
-   <widget class="QLabel" name="label_title_2">
+   <widget class="QLabel" name="label_icon">
     <property name="geometry">
      <rect>
       <x>10</x>

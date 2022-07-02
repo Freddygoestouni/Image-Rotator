@@ -1,15 +1,27 @@
-import sys
-from PyQt5.uic import loadUi
-from PyQt5 import QtWidgets, QtGui, QtCore
-from PyQt5.QtWidgets import QDialog, QApplication, QWidget, QFileDialog
+'''
 
+Python script to control the user interface for the processing page.
+This page is shown whilst the application is processing a rotation request.
+
+'''
+
+# Standard libaray imports
+import sys
+
+# PyQt5 imports
+from PyQt5 import QtWidgets, QtGui, QtCore
+from PyQt5.QtWidgets import QWidget
+
+# User interface import
 from processing_interface import Ui_Form
+
+# Rotator library
 import rotator
 
-class Processing_Interface(QWidget):
+class Interface(QWidget):
     '''Class for the window shown when application is processing images'''
 
-    def __init__(self, widget : QtWidgets.QStackedWidget, parameters : dict()):
+    def __init__(self, widget : QtWidgets.QStackedWidget):
         '''
         Method to initialise the processing Interface
 
@@ -19,7 +31,7 @@ class Processing_Interface(QWidget):
         '''
 
         # Call the super class' constructor
-        super(Processing_Interface, self).__init__()
+        super(Interface, self).__init__()
 
         # Set up the user interface
         self.ui = Ui_Form()
@@ -44,11 +56,15 @@ class Processing_Interface(QWidget):
         # Hide buttons
         self.ui.button_cancel.setHidden(True)
         self.ui.button_new.setHidden(True)
-        # self.ui.button_close.setHidden(True)
 
         # Activate the buttons
         self.ui.button_close.clicked.connect(lambda : sys.exit(1))
         self.ui.button_new.clicked.connect(self.reset)
+
+    def start(self, parameters : dict()):
+        '''
+        Method to start the execution of the application.
+        '''
 
         # Update the title text
         if len(parameters["files"]) == 1:
@@ -86,10 +102,10 @@ class Processing_Interface(QWidget):
 
         # Remove all widgets from the stacked widget
         self.widget.removeWidget(self.widget.widget(self.widget.currentIndex()+1))
-        #self.widget.removeWidget(self.widget.widget(self.widget.currentIndex()))
 
-        # Display the input page
-        #display_primary_interface(self.widget)
+        # Set the dimensions of the screen
+        self.widget.setFixedHeight(590)
+        self.widget.setFixedWidth(840)
 
     def mousePressEvent(self, event):
         self.old_position = event.globalPos()
@@ -99,7 +115,7 @@ class Processing_Interface(QWidget):
         self.widget.move(self.widget.x() + delta.x(), self.widget.y() + delta.y())
         self.old_position = event.globalPos()
 
-def display(widget, parameters):
+def display(widget : QtWidgets.QStackedWidget, parameters : dict()):
     '''
     Method to process the images, and display a screen showing progress
 
@@ -109,7 +125,7 @@ def display(widget, parameters):
     '''
 
     # Initialise the processing screen
-    screen = Processing_Interface(widget, parameters)
+    screen = Interface(widget)
 
     # Add the processing screen to the stacked widget
     widget.addWidget(screen)
@@ -120,3 +136,6 @@ def display(widget, parameters):
     # Set the dimensions of the new screen
     widget.setFixedHeight(200)
     widget.setFixedWidth(385)
+
+    # Start the execution
+    screen.start(parameters)

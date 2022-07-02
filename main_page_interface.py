@@ -414,31 +414,6 @@ class Ui_Form(object):
         font.setPointSize(10)
         self.choose_file_type.setFont(font)
         self.choose_file_type.setObjectName("choose_file_type")
-        self.button_same_quality_2 = QtWidgets.QPushButton(self.group_four)
-        self.button_same_quality_2.setGeometry(QtCore.QRect(140, 13, 48, 44))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.button_same_quality_2.sizePolicy().hasHeightForWidth())
-        self.button_same_quality_2.setSizePolicy(sizePolicy)
-        self.button_same_quality_2.setStyleSheet("QPushButton{\n"
-"    background-color: rgba(202, 240, 248, 200);\n"
-"    border: 0px solid;\n"
-"    border-radius: 10px;\n"
-"    padding:7px;    \n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color: rgba(0, 119, 182, 200);\n"
-"    border: 0px solid;\n"
-"    border-radius: 10px;\n"
-"    padding:7px;    \n"
-"}")
-        self.button_same_quality_2.setText("")
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap(":/icons/icons/cpu.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.button_same_quality_2.setIcon(icon5)
-        self.button_same_quality_2.setIconSize(QtCore.QSize(30, 30))
-        self.button_same_quality_2.setObjectName("button_same_quality_2")
         self.group_five = QtWidgets.QGroupBox(self.container_input)
         self.group_five.setGeometry(QtCore.QRect(10, 372, 359, 61))
         self.group_five.setStyleSheet("")
@@ -471,9 +446,9 @@ class Ui_Form(object):
 "    padding:7px;    \n"
 "}")
         self.button_choose_save.setText("")
-        icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap(":/icons/icons/folder.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.button_choose_save.setIcon(icon6)
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap(":/icons/icons/folder.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.button_choose_save.setIcon(icon5)
         self.button_choose_save.setIconSize(QtCore.QSize(30, 30))
         self.button_choose_save.setObjectName("button_choose_save")
         self.horizontalLayout.addWidget(self.container_input)
@@ -505,31 +480,6 @@ class Ui_Form(object):
         self.label_preview.setFont(font)
         self.label_preview.setObjectName("label_preview")
         self.horizontalLayout.addWidget(self.container_preview)
-        self.button_cancel = QtWidgets.QPushButton(self.container_root)
-        self.button_cancel.setGeometry(QtCore.QRect(30, 500, 48, 44))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.button_cancel.sizePolicy().hasHeightForWidth())
-        self.button_cancel.setSizePolicy(sizePolicy)
-        self.button_cancel.setStyleSheet("QPushButton{\n"
-"    background-color: rgba(202, 240, 248, 200);\n"
-"    border: 0px solid;\n"
-"    border-radius: 10px;\n"
-"    padding:7px;    \n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color: rgba(0, 119, 182, 200);\n"
-"    border: 0px solid;\n"
-"    border-radius: 10px;\n"
-"    padding:7px;    \n"
-"}")
-        self.button_cancel.setText("")
-        icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap(":/icons/icons/slash.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.button_cancel.setIcon(icon7)
-        self.button_cancel.setIconSize(QtCore.QSize(30, 30))
-        self.button_cancel.setObjectName("button_cancel")
         self.button_start = QtWidgets.QPushButton(self.container_root)
         self.button_start.setGeometry(QtCore.QRect(330, 495, 48, 44))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
@@ -551,9 +501,9 @@ class Ui_Form(object):
 "    padding:7px;    \n"
 "}")
         self.button_start.setText("")
-        icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap(":/icons/icons/arrow-right.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.button_start.setIcon(icon8)
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap(":/icons/icons/arrow-right.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.button_start.setIcon(icon6)
         self.button_start.setIconSize(QtCore.QSize(30, 30))
         self.button_start.setObjectName("button_start")
         self.label_creator = QtWidgets.QLabel(self.container_root)
@@ -620,9 +570,9 @@ class Ui_Form(object):
 "    padding:7px;    \n"
 "}")
         self.button_close.setText("")
-        icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap(":/icons/icons/x.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.button_close.setIcon(icon9)
+        icon7 = QtGui.QIcon()
+        icon7.addPixmap(QtGui.QPixmap(":/icons/icons/x.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.button_close.setIcon(icon7)
         self.button_close.setIconSize(QtCore.QSize(30, 30))
         self.button_close.setObjectName("button_close")
         self.button_minimise = QtWidgets.QPushButton(self.nav_bar_widget)
@@ -645,9 +595,9 @@ class Ui_Form(object):
 "    padding:7px;    \n"
 "}")
         self.button_minimise.setText("")
-        icon10 = QtGui.QIcon()
-        icon10.addPixmap(QtGui.QPixmap(":/icons/icons/minus.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.button_minimise.setIcon(icon10)
+        icon8 = QtGui.QIcon()
+        icon8.addPixmap(QtGui.QPixmap(":/icons/icons/minus.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.button_minimise.setIcon(icon8)
         self.button_minimise.setIconSize(QtCore.QSize(30, 30))
         self.button_minimise.setObjectName("button_minimise")
         self.button_user_guide = QtWidgets.QPushButton(self.nav_bar_widget)
@@ -670,14 +620,13 @@ class Ui_Form(object):
 "    padding:7px;    \n"
 "}")
         self.button_user_guide.setText("")
-        icon11 = QtGui.QIcon()
-        icon11.addPixmap(QtGui.QPixmap(":/icons/icons/info.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.button_user_guide.setIcon(icon11)
+        icon9 = QtGui.QIcon()
+        icon9.addPixmap(QtGui.QPixmap(":/icons/icons/info.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.button_user_guide.setIcon(icon9)
         self.button_user_guide.setIconSize(QtCore.QSize(20, 20))
         self.button_user_guide.setObjectName("button_user_guide")
         self.nav_bar_widget.raise_()
         self.container_widget.raise_()
-        self.button_cancel.raise_()
         self.button_start.raise_()
         self.label_creator.raise_()
 
@@ -706,11 +655,9 @@ class Ui_Form(object):
         self.button_same_quality.setToolTip(_translate("Form", "Same Quality"))
         self.label_stage_four.setText(_translate("Form", "4 - Alterations"))
         self.choose_file_type.setToolTip(_translate("Form", "Destination File Type"))
-        self.button_same_quality_2.setToolTip(_translate("Form", "Same Quality"))
         self.label_stage_five.setText(_translate("Form", "5 - Destination"))
         self.button_choose_save.setToolTip(_translate("Form", "Select Destination Location"))
         self.label_preview.setText(_translate("Form", "Preview"))
-        self.button_cancel.setToolTip(_translate("Form", "Cancel/Reset"))
         self.button_start.setToolTip(_translate("Form", "Start"))
         self.label_creator.setText(_translate("Form", "Created by: Nicholas Williams"))
         self.label_title.setText(_translate("Form", "<strong> Image Rotator </strong>"))

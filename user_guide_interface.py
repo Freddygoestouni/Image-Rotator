@@ -185,13 +185,13 @@ class Ui_Form(object):
         self.button_user_guide.setIcon(icon2)
         self.button_user_guide.setIconSize(QtCore.QSize(20, 20))
         self.button_user_guide.setObjectName("button_user_guide")
+        self.label_page_title = QtWidgets.QLabel(self.nav_bar_widget)
+        self.label_page_title.setGeometry(QtCore.QRect(270, 10, 121, 25))
+        self.label_page_title.setStyleSheet("font: 16pt \"Gill Sans MT\";")
+        self.label_page_title.setObjectName("label_page_title")
         self.container_content = QtWidgets.QWidget(self.container_root)
         self.container_content.setGeometry(QtCore.QRect(10, 50, 780, 490))
         self.container_content.setObjectName("container_content")
-        self.label_page_title = QtWidgets.QLabel(self.container_content)
-        self.label_page_title.setGeometry(QtCore.QRect(5, 5, 110, 25))
-        self.label_page_title.setStyleSheet("font: 16pt \"Gill Sans MT\";")
-        self.label_page_title.setObjectName("label_page_title")
         self.button_back = QtWidgets.QPushButton(self.container_content)
         self.button_back.setGeometry(QtCore.QRect(730, 10, 40, 40))
         self.button_back.setText("")
@@ -200,6 +200,19 @@ class Ui_Form(object):
         self.button_back.setIcon(icon3)
         self.button_back.setIconSize(QtCore.QSize(30, 30))
         self.button_back.setObjectName("button_back")
+        self.guide_text_left = QtWidgets.QTextBrowser(self.container_content)
+        self.guide_text_left.setGeometry(QtCore.QRect(10, 0, 361, 491))
+        self.guide_text_left.setStyleSheet("background-color: rgba(255, 255, 255, 0);\n"
+"font: 10pt \"Gill Sans MT\";\n"
+"border: 0px;")
+        self.guide_text_left.setObjectName("guide_text_left")
+        self.guide_text_right = QtWidgets.QTextBrowser(self.container_content)
+        self.guide_text_right.setGeometry(QtCore.QRect(410, 60, 341, 421))
+        self.guide_text_right.setStyleSheet("background-color: rgba(255, 255, 255, 0);\n"
+"font: 10pt \"Gill Sans MT\";\n"
+"color: rgb(255, 255, 255);\n"
+"border: 0px;")
+        self.guide_text_right.setObjectName("guide_text_right")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -211,6 +224,36 @@ class Ui_Form(object):
         self.button_close.setToolTip(_translate("Form", "Close Application"))
         self.button_minimise.setToolTip(_translate("Form", "Minimise Application"))
         self.button_user_guide.setToolTip(_translate("Form", "Open User Guide"))
-        self.label_page_title.setText(_translate("Form", "User Guide"))
+        self.label_page_title.setText(_translate("Form", "- User Guide"))
         self.button_back.setToolTip(_translate("Form", "Back"))
+        self.guide_text_left.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Gill Sans MT\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ffffff;\">Rotating Images</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; color:#ffffff;\">Stage One - Selecting Image Files</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">In this stage you get to choose the images to rotate. When you press the image button a file explorer window will open allowing any number of image files to be selected. The images have to be in the same folder.</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600; color:#ffffff;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; color:#ffffff;\">Stage Two - Choosing Image Rotation</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">In this stage you get to choose by how much the image should be rotated by. You are first asked to choose between clockwise and conter-clockwise rotation and then the angle of rotation. There are two preset angles: 90° and 180°. To choose a different angle, select the ?° button and input the angle.</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600; color:#ffffff;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; color:#ffffff;\">Stage Three - Choosing Image Compression</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">In this stage you get to choose to add image compression. There are two buttons: no-compression and compression. If you select compression, an additional value appears allowing you to specify by how much to compress the image(s).</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600; color:#ffffff;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; color:#ffffff;\">Stage Four - Choosing Image Alterations</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">In this stage you get to choose additional alterations to the image. These alterations include converting between colour and black &amp; white as well as the resultant filetype. By default neither will be changed from the original. </span></p></body></html>"))
+        self.guide_text_right.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'Gill Sans MT\'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; color:#ffffff;\">Stage Five - Choosing Image Saving Location</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">In this stage you have to select the location you wish the new images to be saved in. Pressing the folder button will allow you to select a destination location. </span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600; color:#ffffff;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; color:#ffffff;\">Starting Rotation Execution</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Once all of the settings have been selected (Stage 1-5) a button should appear below stage 5. This buttons has a right arrow symbol. When pressed, the application will rotate all the images and save them in the specified location.</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600; color:#ffffff;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ffffff;\">General Information</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Buttons in this application are light blue squares with rounded edges. Hovering over a button will provide more information on what it does. </span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Once you have completed stage one of the process, a preview will appear on the right hand side. Here you can select any of the images and preview how it will look after the execution of the application. </span></p></body></html>"))
 import reasources_rc
