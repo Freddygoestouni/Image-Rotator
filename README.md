@@ -2,7 +2,7 @@
 
 An application to rotate any image or set of images. This includes a GUI. The application can rotate by any angle, compress, change colour space and file type for any set of images of type .png or .jpg.
 
-The application has been developed and tested on a windows computer only. 
+The application has been developed and tested on a windows computer only.
 
 ## Installation Guide
 
@@ -47,6 +47,7 @@ To get a list of the options when running `main.py` you can run:
 This will show there are the following options:
  - `--compile` - whether to compile the .ui files (default false, i.e. `--no-compile`)
  - `--package` - whether to package the application (default false, i.e. `--no-package`)
+ - `--install` - whether to install the application on the computer (default false, i.e. `--no-install`)
  - `--run`- whether to run the application (default true, hence to not run use `--no-run`)
 
 ## User Guide
