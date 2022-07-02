@@ -133,3 +133,6 @@ Test/*
 
 # Icon files
 icons/*
+
+# pptx
+*.pptx
